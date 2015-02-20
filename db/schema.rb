@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150220214308) do
   enable_extension "plpgsql"
 
   create_table "items", force: true do |t|
+    t.integer  "list_id"
     t.text     "title"
     t.boolean  "complete"
     t.datetime "created_at"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150220214308) do
   end
 
   create_table "lists", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

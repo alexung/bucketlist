@@ -1,7 +1,14 @@
 <div id="list-form-container">
   <%= form_for :list, url: lists_path do |f| %>
 
+  <div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </div>
+
+  <div>
   <%= f.submit "Create List" %>
+  </div>
 
   <% end %>
 </div>
