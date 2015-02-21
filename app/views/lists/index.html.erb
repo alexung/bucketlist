@@ -1,7 +1,7 @@
 <ol>
   <% @lists.each do |list| %>
     <li>
-      <%= list.title %>
+      <a href="/lists/<%= list.id %>"><%= list.title %></a>
     </li>
   <% end %>
 </ol>

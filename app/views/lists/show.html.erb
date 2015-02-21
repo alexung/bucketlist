@@ -1,0 +1,23 @@
+<ol>
+<% @items.each do |item| %>
+  <li>
+    <%= item.task %> | <%= item.complete %>
+  </li>
+<% end %>
+</ol>
+
+
+<div class="item-container">
+<%= form_for :item, url: list_items_path(list_id: @list.id) do |f| %>
+
+  <div>
+    <%= f.label :task %>
+    <%= f.text_field :task %>
+  </div>
+
+  <div>
+    <%= f.submit "Add items to the Bucket List!" %>
+  </div>
+
+<% end %>
+</div>
