@@ -1,1 +1,7 @@
-index.html.erb
+<ol>
+  <% @lists.each do |list| %>
+    <li>
+      <a href="/lists/<%= list.id %>"><%= list.title %></a>
+    </li>
+  <% end %>
+</ol>
