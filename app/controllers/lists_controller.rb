@@ -12,10 +12,10 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     if @list.save
       flash[:success]
-      redirect_to 'index'
+      redirect_to '/'
     else
       flash[:error]
-      redirect_to 'new'
+      redirect_to '/lists/new'
     end
   end
 
