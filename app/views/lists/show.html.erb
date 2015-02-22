@@ -1,10 +1,27 @@
+<h1> Title: <%= @list.title %> </h1>
+<h3>Incomplete BucketList Items</h3>
 <ol>
-<% @items.each do |item| %>
+<% @incomplete_items.each do |item| %>
   <li>
-    <%= item.task %> | <%= item.complete %>
+    <%= form_for :item, url: {action: 'update'}, method: :patch do |f| %>
+
+      <%= f.check_box :complete  %>
+      <%= item.task %>
+      <%= f.submit %>
+    <% end %>
   </li>
 <% end %>
 </ol>
+
+<h3>Complete BucketList Items</h3>
+<ol>
+<% @complete_items.each do |item| %>
+  <li>
+  <%= item.task %>
+  </li>
+<% end %>
+<ol><br>
+
 
 
 <div class="item-container">

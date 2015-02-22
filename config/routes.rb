@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :lists do
     resources :items
   end
+
+  match 'list/:id/complete' => 'lists#complete', :via => :post
+
 end

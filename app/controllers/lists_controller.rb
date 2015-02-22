@@ -21,7 +21,11 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @items = @list.items
+    @incomplete_items = @list.items.where(complete: false)
+    @complete_items = @list.items.where(complete: true)
+  end
+
+  def update
   end
 
   private
