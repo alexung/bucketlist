@@ -31,7 +31,7 @@
 <%= form_for :item, url: list_items_path(list_id: @list.id) do |f| %>
 
   <div>
-    <%= f.label :task %>
+    <%= f.label :task, "Bucket List Item" %>
     <%= f.text_field :task %>
   </div>
 
