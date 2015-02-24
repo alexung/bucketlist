@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.belongs_to :list
       t.text :task
-      t.boolean :complete, default: "false"
+      t.boolean :complete, :default => false, :null => false
 
       t.timestamps
     end

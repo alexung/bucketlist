@@ -1,10 +1,35 @@
+<h1> Title: <%= @list.title %> </h1>
+<h3>Incomplete BucketList Items</h3>
+
 <ol>
-<% @items.each do |item| %>
+<% @incomplete_items.each do |item| %>
   <li>
-    <%= item.task %> | <%= item.complete %>
+    <%#= form_tag list_item_complete_path(list_id: @list.id, item_id: item.id), :method => :put do %>
+    <%= form_for item do |f| %>
+    <%# if item.complete == false %>
+
+      <%= f.check_box :complete, {}, true, false %>
+      <%#= binding.pry %>
+      <%= item.task %>
+      <%= f.submit "Mark as completed" %>
+      <%= link_to "Delete this task", [item.list, item], method: :delete %><br><br>
+
+    <% end %>
   </li>
 <% end %>
 </ol>
+
+
+<h3>Complete BucketList Items</h3>
+<ol>
+<% @complete_items.each do |item| %>
+  <li>
+  <%= item.task %>
+  </li>
+<% end %>
+</ol>
+<br>
+
 
 
 <div class="item-container">
