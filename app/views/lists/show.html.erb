@@ -4,16 +4,11 @@
 <ol>
 <% @incomplete_items.each do |item| %>
   <li>
-    <%#= form_tag list_item_complete_path(list_id: @list.id, item_id: item.id), :method => :put do %>
     <%= form_for item do |f| %>
-    <%# if item.complete == false %>
-
       <%= f.check_box :complete, {}, true, false %>
-      <%#= binding.pry %>
       <%= item.task %>
       <%= f.submit "Mark as completed" %>
-      <%= link_to "Delete this task", [item.list, item], method: :delete %><br><br>
-
+      <%= link_to "X", [item.list, item], method: :delete %><br><br>
     <% end %>
   </li>
 <% end %>

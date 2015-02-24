@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @list = @item.list
       @item.update(item_params)
-      #binding.pry
       redirect_to list_items_path(list_id: @list.id, item_id: @item.id)
   end
 
