@@ -26,6 +26,13 @@ class ListsController < ApplicationController
   end
 
   def update
+    @list = List.find(params[:id])
+    if @list.update_attributes!(params[:list])
+      flash[:notice] = "Successfully updated list"
+      redirect_to root_path
+    else
+      render :action => 'edit'
+    end
   end
 
   private
